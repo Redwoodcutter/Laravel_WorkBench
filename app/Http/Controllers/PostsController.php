@@ -18,6 +18,9 @@ class PostsController extends Controller
             'caption' => 'required',
             'image' => ['required','image'],
         ]);
+
+        auth()->user()->posts()->create($data);
+
         dd(request()->all());
     }
 }
