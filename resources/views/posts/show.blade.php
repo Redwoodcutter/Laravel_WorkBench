@@ -8,9 +8,20 @@
                 <img src="/storage/{{ $post->image }}" class="w-100">
             </div>
             <div class="col-4">
-                <h3>{{ $post->user->username }}</h3>
-
-                <p>{{ $post->caption }}</p>
+                <div>
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <div class="pr-3">
+                                <img src="/storage/{{ $post->user->profile->image }}" class="rounded-circle w-100" style="max-width: 50px;">
+                            </div>
+                            <div>
+                                <div class="font-weight-bold"><a href="/profile/{{ $post->user->id }}"><span class="text-dark">{{ $post->user->username }}</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <p><span class="font-weight-bold"><a href="/profile/{{ $post->user->id }}"><span class="text-dark">{{ $post->user->username }}</a></span> {{ $post->caption }}</p>
             </div>
         </div>
     </div>
